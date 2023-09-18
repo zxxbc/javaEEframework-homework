@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 配置 Order 类 -->
+    <bean id="order" class="Order">
+        <property name="orderId" value="123" />
+        <property name="totalAmount" value="100.0" />
+    </bean>
+
+    <!-- 配置 PaymentProcessor 类，并注入 Order 对象 -->
+    <bean id="paymentProcessor" class="PaymentProcessor">
+        <property name="order" ref="order" />
+    </bean>
+</config>
